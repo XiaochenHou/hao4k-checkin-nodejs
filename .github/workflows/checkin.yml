@@ -21,12 +21,12 @@ jobs:
     
     steps:
     # check-out 仓库中最新的代码到 Workflow 的工作区
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
 
     - name: 安装node
-      uses: actions/setup-node@v2
+      uses: actions/setup-node@v3
       with:
-        node-version: '14'
+        node-version: '20'
  
     - name: 安装依赖包
       run: npm install
@@ -43,6 +43,8 @@ jobs:
         BARKKEY : ${{ secrets.BARKKEY  }}
         BARKSERVER : ${{ secrets.BARKSERVER  }}
         CHECKHOST : ${{ secrets.CHECKHOST  }}
+        TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
+        TELEGRAM_ID: ${{ secrets.TELEGRAM_ID }}
 
 
 
